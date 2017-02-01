@@ -34,12 +34,13 @@ public class Employee {
         this.lastName = lastName;
         this.ssn = ssn;
     }
-
+    //added helper method
     public String getFormattedDate() {
         SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyyy");
         return sdf.format(orientationDate);
     }
 
+    //added method to control order
     public void orientationDayActivities(String cubeId) {
         this.meetWithHrForBenefitAndSalryInfo();
         this.meetDepartmentStaff();
