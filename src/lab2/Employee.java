@@ -34,6 +34,7 @@ public class Employee {
         this.lastName = lastName;
         this.ssn = ssn;
     }
+
     //added helper method
     public String getFormattedDate() {
         SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyyy");
@@ -41,7 +42,7 @@ public class Employee {
     }
 
     //added method to control order
-    public void orientationDayActivities(String cubeId) {
+    public void attendOrientationDayActivities(String cubeId) {
         this.meetWithHrForBenefitAndSalryInfo();
         this.meetDepartmentStaff();
         this.reviewDeptPolicies();
@@ -52,7 +53,6 @@ public class Employee {
     // would only do this once, upon being hired.
     private void meetWithHrForBenefitAndSalryInfo() {
         metWithHr = true;
-        getFormattedDate();
         System.out.println(firstName + " " + lastName + " met with Hr on "
                 + getFormattedDate());
     }
@@ -61,7 +61,6 @@ public class Employee {
     // would only do this once, upon being hired.:
     private void meetDepartmentStaff() {
         metDeptStaff = true;
-        getFormattedDate();
         System.out.println(firstName + " " + lastName + " met with Dept. Staff on "
                 + getFormattedDate());
     }
@@ -71,7 +70,6 @@ public class Employee {
     // independently from other classes.
     public void reviewDeptPolicies() {
         reviewedDeptPolicies = true;
-        getFormattedDate();
         System.out.println(firstName + " " + lastName + " reviewed Dept policies on "
                 + getFormattedDate());
     }
@@ -80,15 +78,19 @@ public class Employee {
     // sometimes change office locations that this method may need to be called 
     // independently from other classes.
     public void moveIntoCubicle(String cubeId) {
-        if (cubeId == null) {
+        if (cubeId == null || cubeId.isEmpty()) {
             System.out.println("Invalid cubeId.");
+            System.exit(0);
+        } else {
+            this.cubeId = cubeId;
         }
-        this.cubeId = cubeId;
-        if (this.movedIn = true) {
-            getFormattedDate();
+
+        if (this.movedIn == true) {
             System.out.println(firstName + " " + lastName + " moved into cubicle "
                     + cubeId + " on " + getFormattedDate());
+        } else {
             System.out.println("This cube is not available, please assign the employee to a different cube.");
+            System.exit(0);
         }
     }
 
