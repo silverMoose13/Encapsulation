@@ -125,7 +125,12 @@ public class Employee {
     public void setSsn(String ssn) {
         if (ssn == null || ssn.isEmpty()) {
             System.out.println("Please enter a social security number.");
-        } else {
+        } 
+        if (ssn.length() != 9 ) {
+            System.out.println("Please enter in your social security number in the"
+                    + "proper format: 123456789");
+        }
+        else {
             this.ssn = ssn;
         }
     }
