@@ -80,7 +80,6 @@ public class Employee {
     public void moveIntoCubicle(String cubeId) {
         if (cubeId == null || cubeId.isEmpty()) {
             System.out.println("Invalid cubeId.");
-            System.exit(0);
         } else {
             this.cubeId = cubeId;
         }
@@ -90,7 +89,6 @@ public class Employee {
                     + cubeId + " on " + getFormattedDate());
         } else {
             System.out.println("This cube is not available, please assign the employee to a different cube.");
-            System.exit(0);
         }
     }
 
@@ -101,7 +99,11 @@ public class Employee {
     // setter methods give the developer the power to control what data is
     // allowed through validation.
     public void setFirstName(String firstName) {
-        this.firstName = firstName;
+        if (firstName == null || firstName.isEmpty()) {
+            System.out.println("Please enter a first name.");
+        } else {
+            this.firstName = firstName;
+        }
     }
 
     public String getLastName() {
@@ -109,7 +111,11 @@ public class Employee {
     }
 
     public void setLastName(String lastName) {
-        this.lastName = lastName;
+        if (lastName == null || lastName.isEmpty()) {
+            System.out.println("Please enter a last name.");
+        } else {
+            this.lastName = lastName;
+        }
     }
 
     public String getSsn() {
@@ -117,7 +123,11 @@ public class Employee {
     }
 
     public void setSsn(String ssn) {
-        this.ssn = ssn;
+        if (ssn == null || ssn.isEmpty()) {
+            System.out.println("Please enter a social security number.");
+        } else {
+            this.ssn = ssn;
+        }
     }
 
     public boolean isMetWithHr() {
@@ -158,7 +168,11 @@ public class Employee {
     }
 
     public void setCubeId(String cubeId) {
-        this.cubeId = cubeId;
+        if (cubeId == null || cubeId.isEmpty()) {
+            System.out.println("Please enter a cube ID.");
+        } else {
+            this.cubeId = cubeId;
+        }
     }
 
     public Date getOrientationDate() {
@@ -166,6 +180,10 @@ public class Employee {
     }
 
     public void setOrientationDate(Date orientationDate) {
-        this.orientationDate = orientationDate;
+        if (orientationDate == null) {
+            System.out.println("Please enter an orientation date.");
+        } else {
+            this.orientationDate = orientationDate;
+        }
     }
 }
