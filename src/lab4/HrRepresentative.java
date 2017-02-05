@@ -2,7 +2,7 @@ package lab4;
 
 import java.util.Date;
 
-public class HiringRepresentative {
+public class HrRepresentative {
 
     private final String REQUIRED_MSG = " is mandatory ";
     private final String CRLF = "\n"; // carriage return line feed
@@ -21,7 +21,7 @@ public class HiringRepresentative {
     Employee newEmp = new Employee();
     DepartmentSupervisor sup = new DepartmentSupervisor();
 
-    public HiringRepresentative() {
+    public HrRepresentative() {
         dateUtil = new DateUtility();
         reportService = new EmployeeReportService();
     }
