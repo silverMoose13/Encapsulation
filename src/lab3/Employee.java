@@ -58,14 +58,6 @@ public class Employee {
         dateFormat = new DateUtility();
     }
 
-    /* 
-        This should be private because it is useful only to this class and then,
-        only as a helper method to other methods. This is method hiding - a type 
-        of encapsulation where we put frequently used code in one place for for
-        easy editing later if necessary.
-     */
-
-
     /*
         This method is public because it must be available to other classes in
         this project. Notice that it controls the order in which the helper methods
@@ -92,14 +84,13 @@ public class Employee {
                 + dateFormat.getFormattedDate(orientationDate));
     }
 
-    // Assume this must be performed first, and assume that an employee
+    // Assume this must be performed second, and assume that an employee
     // would only do this once, upon being hired. If that were true, this
     // method should not be public. It should only be available to this class
     // and should only be called as part of the larger task of:
     // doFirtTimeOrientation()
     private void meetDepartmentStaff() {
         metDeptStaff = true;
-        
         reportService.doOutput(firstName + " " + lastName + " met with Dept. Staff on "
                 + dateFormat.getFormattedDate(orientationDate));
     }

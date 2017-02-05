@@ -123,14 +123,10 @@ public class Employee {
     }
 
     public void setSsn(String ssn) {
-        if (ssn == null || ssn.isEmpty()) {
-            System.out.println("Please enter a social security number.");
-        } 
-        if (ssn.length() != 9 ) {
-            System.out.println("Please enter in your social security number in the"
-                    + "proper format: 123456789");
-        }
-        else {
+        if (ssn == null || ssn.isEmpty() || ssn.length() < 9 || ssn.length() > 11) {
+            System.out.println("Please enter in your social security number and ensure it is in the "
+                    + "proper format: 123456789 or 123-45-6789");
+        } else {
             this.ssn = ssn;
         }
     }
