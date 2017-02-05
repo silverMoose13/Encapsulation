@@ -15,9 +15,9 @@ public class Startup {
         Employee employee = new Employee("Peter","Piper","333-33-3333");
         HiringRepresentative hrRep = new HiringRepresentative();
         
-        //now that this is assigned for the HR rep the problem is the firstName, LastName,
-        //and ssn aren't being stored properly and are null. We need to somehow access those
-        //members
+        //now that this is assigned for the HR rep the problem is the orientationDate. We have
+        //a null pointer exception here. We need to somehow access that member properly in the 
+        //hiringRepresentative class and the departmentSupervisor classes.
         hrRep.doFirstTimeOrientation("A101");
         employee.getReportService().outputReport();
     }
