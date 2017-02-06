@@ -13,14 +13,11 @@ public class Startup {
     public static void main(String[] args) {
 
         Employee employee = new Employee("Peter","Piper","333-33-3333");
-        HrRepresentative hrRep = new HrRepresentative();
         
-        //now that this is assigned for the HR rep the problem is the orientationDate. We have
-        //a null pointer exception here. We need to somehow access that member properly in the 
-        //hiringRepresentative class and the departmentSupervisor classes.
-        hrRep.doFirstTimeOrientation("A101");
+        employee.doFirstTimeOrientation("A101");
         employee.getReportService().outputReport();
     }
     
     
 }
+
