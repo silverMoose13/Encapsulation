@@ -8,7 +8,7 @@ public class HrRepresentative {
     private final String CRLF = "\n"; // carriage return line feed
 
     //migrated the members from the employee class since HR sets up and 
-    //orchestrates these activities. Consider making a department supervisor.
+    //orchestrates these activities.
     private boolean metWithHr;
     private Date orientationDate;
     //
