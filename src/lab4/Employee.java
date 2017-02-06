@@ -34,6 +34,7 @@ import java.util.Date;
  * @version 1.02
  */
 public class Employee {
+    
     // Use constants for numbers or Strings that are repeated 
     // (all are called 'magic numbers', which are evil). This makes editing
     // these values easier -- one place to do it.
@@ -50,7 +51,10 @@ public class Employee {
     private String cubeId;
     private Date orientationDate;
     private EmployeeReportService reportService;
-
+    
+    //assigned a new default constructor
+    public Employee() {}
+    
     /*
         Notice we force certain mandatory properties by using a custom
         constructor. But we use the setter method to peform validation.
